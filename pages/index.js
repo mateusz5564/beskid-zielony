@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
+import Header from '../components/Header/index'
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
         <title>Beskid Zielony | Lokalna Organizacja Turystyczna</title>
       </Head>
 
-      <Navbar />
+      <Header />
     </div>
   )
 }
