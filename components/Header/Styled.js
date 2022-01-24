@@ -54,7 +54,7 @@ const Link = styled.a`
   }
 `;
 
-const HeroImg = styled.div`
+const HeaderImg = styled.div`
   position: relative;
   height: 16rem;
   background: url("img/pasek.jpg");
@@ -74,7 +74,7 @@ const Styled = {
   Header,
   Nav,
   Banner,
-  HeroImg,
+  HeaderImg,
   Logo,
   List,
   ListItem,

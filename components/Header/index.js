@@ -4,7 +4,6 @@ import Link from "./Link";
 
 const Header = () => {
   return (
-    // <Container>
     <S.Header>
       <S.Nav>
         <S.Logo src="img/logo.png" alt="" />
@@ -20,12 +19,11 @@ const Header = () => {
           </S.ListItem>
         </S.List>
       </S.Nav>
-      <S.HeroImg></S.HeroImg>
+      <S.HeaderImg></S.HeaderImg>
       <S.Banner>
         <img src="img/bsz_banner.svg" alt="" />
       </S.Banner>
     </S.Header>
-    // </Container>
   );
 };
 
