@@ -3,71 +3,63 @@ import styled from "styled-components";
 const Header = styled.header`
   font-size: 1.6rem;
   background-color: ${({ theme }) => theme.colors.white};
-`;
+  border-top: 6px solid ${({theme}) => theme.colors.darkGreen[500]};
+  `;
 
 const Nav = styled.nav`
+  position: relative;
   background-color: ${({ theme }) => theme.colors.white};
-  padding: .8rem 3.6rem;
   display: flex;
-`;
+  z-index: 5;
+  `;
 
 const Banner = styled.div`
   padding-top: 1.6rem;
   text-align: bottom;
   background-color: ${({theme}) => theme.colors.whiteGreen};
-
+  margin-bottom: 5rem;
+  
   img {
     width: 100%;
   }
-`;
-
-const Logo = styled.img`
-  height: 7rem;
-  display: inline-block;
-`;
+  `;
 
 const List = styled.ul`
   padding: 0;
+  display: flex;
+  align-items: center;
   list-style: none;
   margin-left: 3.2rem;
-`;
+  `;
 
 const ListItem = styled.li`
   flex-shrink: 0;
   display: inline-block;
   margin-right: 3.6rem;
-`;
+  `;
 
 const Link = styled.a`
   display: inline-block;
-  padding: 2.4rem 0;
+  padding: 1.6rem .8rem;
   font-size: 1.6rem;
-  color: ${({ theme }) => theme.colors.darkGray[600]};
+  color: ${({ theme, isActive }) => isActive ? theme.colors.white : theme.colors.darkGray[600]};
+  background: ${({ theme, isActive }) => isActive ? `linear-gradient(${theme.colors.darkGreen[500]}, ${theme.colors.lightGreen[500]})` : theme.colors.white};
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-
-  .dekor {
-    display: block;
-    height: 5px;
-    background-image: ${({theme, isActive}) => isActive ? `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.orange[500]})` : ''};
-  }
-`;
+  `;
 
 const HeaderImg = styled.div`
-  position: relative;
   height: 16rem;
-  background: url("img/pasek.jpg");
-  background-position: center;
-  background-size: cover;
+  position: relative;
 
-  & > div {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+  img {
+    object-fit: cover;
   }
+
+  /* background: url("img/decorations/pasek.jpg");
+  background-position: center;
+  background-size: cover; */
 `;
 
 const Styled = {
@@ -75,7 +67,6 @@ const Styled = {
   Nav,
   Banner,
   HeaderImg,
-  Logo,
   List,
   ListItem,
   Link,
