@@ -13,6 +13,7 @@ html, body {
   background-color: ${({theme}) => theme.colors.whiteGreen};
 }
 body {
+  font-size: 100%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Baloo Bhai 2';
