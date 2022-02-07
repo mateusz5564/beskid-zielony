@@ -9,7 +9,6 @@ import museumsImages from "../../utils/museumsImages";
 import agrotourismImages from "../../utils/agrotourismImages";
 
 const CoGdzieKiedy = () => {
-
   return (
     <>
       <Head>
@@ -17,9 +16,6 @@ const CoGdzieKiedy = () => {
       </Head>
 
       <main>
-        <Container $textAlign="center">
-          <LinkIcon href="/">informacja czwartkowa nr 1/06.01.2022</LinkIcon>
-        </Container>
         <Container $maxWidth="100rem">
           <S.Features>
             <h1>Co? Gdzie? Kiedy?</h1>
@@ -49,6 +45,9 @@ const CoGdzieKiedy = () => {
             </S.MParagraphWithIcon>
           </S.Features>
         </Container>
+
+        <LinkIcon href="/">informacja czwartkowa nr 1/06.01.2022</LinkIcon>
+
         <S.HelpUs>
           <Container $maxWidth="70rem">
             <div>
@@ -73,7 +72,7 @@ const CoGdzieKiedy = () => {
         </S.Newsletter>
         <S.Ads>
           <SimpleSlider images={museumsImages} slidesPerView={2} />
-          <SimpleSlider images={agrotourismImages} slidesPerView={3}/>
+          <SimpleSlider images={agrotourismImages} slidesPerView={3} />
         </S.Ads>
       </main>
     </>
