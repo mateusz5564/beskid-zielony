@@ -7,6 +7,7 @@ const LinkIcon = ({ href, children }) => {
       <S.Link>
         <img src="img/icons/newsletter.png" alt="" />
         {children}
+        <img src="img/icons/newsletter.png" alt="" />
       </S.Link>
     </NextLink>
   );
