@@ -1,23 +1,22 @@
 import Head from "next/head";
-import styled from "styled-components";
 import MainSwiper from "../components/MainSwiper";
 import Container from "../components/shared/Container";
 import TextOnBg from "../components/shared/TextOnBg";
 import regionImages from "../utils/regionImages";
+import S from "../components/pages/index/Styled";
 
 export default function Home() {
-  console.log(regionImages)
 
   return (
     <>
       <Head>
         <title>Beskid Zielony | Lokalna Organizacja Turystyczna</title>
       </Head>
-      <main>
+      <S.Main>
         <Container>
           <MainSwiper images={regionImages} />
         </Container>
-        <StyledSection>
+        <S.SectionText>
           <img className="left" src="img/decorations/dekor_left.png" alt="" />
           <img className="right" src="img/decorations/dekor_right.png" alt="" />
           <TextOnBg>
@@ -27,33 +26,10 @@ export default function Home() {
             żydowskiej. Wszystkich których sercu bliska jest mozaika kulturowa naszej krainy,
             serdecznie zapraszamy do korzystania z portalu i aktywnego udziału w jego redagowaniu!
           </TextOnBg>
-        </StyledSection>
-      </main>
+        </S.SectionText>
+      </S.Main>
     </>
   );
 }
 
-const StyledSection = styled.section`
-  position: relative;
-  margin-top: 10rem;
 
-  ${TextOnBg} {
-    margin: 0 auto;
-  }
-
-  img {
-    height: 20rem;
-  }
-
-  .left {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  .right {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-`;
