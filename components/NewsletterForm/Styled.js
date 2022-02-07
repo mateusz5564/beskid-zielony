@@ -8,7 +8,7 @@ const Form = styled.form`
   p {
     font-size: 2.5rem;
     text-align: center;
-    color: ${({theme}) => theme.colors.darkGreen[500]};
+    color: ${({theme}) => theme.colors.darkGreen[700]};
     margin-bottom: 2.4rem;
   }
 

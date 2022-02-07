@@ -31,7 +31,7 @@ const Wrapper = styled.div`
 
   p {
     font-size: 2rem;
-    color: ${({ theme }) => theme.colors.darkGreen[500]};
+    color: ${({ theme }) => theme.colors.darkGreen[700]};
   }
 
   b {

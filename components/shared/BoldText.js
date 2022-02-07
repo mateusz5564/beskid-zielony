@@ -6,7 +6,6 @@ const BoldText = ({ children }) => {
 
 const Bold = styled.b`
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.darkGreen[500]};
 `;
 
 export default BoldText;

@@ -7,14 +7,14 @@ const Features = styled.section`
 
   h1 {
     font-size: 4rem;
-    color: ${({theme}) => theme.colors.darkGreen[500]}
+    color: ${({theme}) => theme.colors.darkGreen[700]}
   }
 
   h2 {
     max-width: 60rem;
     margin: 0 auto;
     margin-bottom: 5rem;
-    color: ${({theme}) => theme.colors.darkGreen[500]};
+    color: ${({theme}) => theme.colors.darkGreen[700]};
     font-size: 2rem;
     font-weight: 500;
   }
@@ -27,7 +27,7 @@ const MParagraphWithIcon = styled(ParagraphWithIcon)`
 
 const HelpUs = styled.section`
   background-color: ${({theme}) => theme.colors.white};
-  color: ${({theme}) => theme.colors.darkGreen[500]};
+  color: ${({theme}) => theme.colors.darkGreen[700]};
   padding: 6.4rem 0;
 
   img {
