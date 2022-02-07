@@ -4,7 +4,7 @@ import NextLink from "next/link";
 const Link = ({ children, href, isActive }) => {
   return (
     <NextLink href={href}>
-      <S.Link isActive={isActive}>{children}</S.Link>
+      <S.Link isActive={isActive}>{children}<span></span></S.Link>
     </NextLink>
   );
 };
