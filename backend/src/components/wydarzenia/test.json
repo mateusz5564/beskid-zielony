@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_event_tests",
+  "info": {
+    "displayName": "Wydarzenie",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "dataRozpoczecia": {
+      "type": "datetime",
+      "required": true
+    },
+    "daneWydarzenia": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wydarzenia.dane-wydarzenia",
+      "required": true
+    }
+  }
+}

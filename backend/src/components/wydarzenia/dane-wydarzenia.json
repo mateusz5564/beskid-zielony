@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_wydarzenia_dane_wydarzenias",
+  "info": {
+    "displayName": "DaneWydarzenia",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "tytul": {
+      "type": "string",
+      "required": true
+    },
+    "miejscowosc": {
+      "type": "string",
+      "required": true
+    },
+    "lokalizacja": {
+      "type": "string",
+      "required": true
+    },
+    "wstep": {
+      "type": "string",
+      "required": true
+    },
+    "stronaInternetowa": {
+      "type": "string",
+      "required": false
+    },
+    "opis": {
+      "type": "text",
+      "required": true
+    },
+    "obrazek": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "sponsorowane": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

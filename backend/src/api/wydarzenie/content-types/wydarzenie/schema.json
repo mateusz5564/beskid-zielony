@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wydarzenia",
+  "info": {
+    "singularName": "wydarzenie",
+    "pluralName": "wydarzenia",
+    "displayName": "Wydarzenia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tytul": {
+      "type": "string",
+      "required": true
+    },
+    "termin": {
+      "type": "datetime",
+      "required": true
+    },
+    "sponsorowane": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "czasowe": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "miejscowosc": {
+      "type": "string",
+      "required": true
+    },
+    "lokalizacja": {
+      "type": "string",
+      "required": true
+    },
+    "wstep": {
+      "type": "string",
+      "required": true
+    },
+    "stronaInternetowa": {
+      "type": "string",
+      "required": true
+    },
+    "opis": {
+      "type": "text",
+      "required": true
+    },
+    "obrazek": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "informacje_czwartkowe": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::informacja-czwartkowa.informacja-czwartkowa",
+      "inversedBy": "wydarzenia"
+    }
+  }
+}

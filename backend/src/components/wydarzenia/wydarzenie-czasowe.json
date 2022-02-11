@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_wydarzenia_wydarzenie_czasowes",
+  "info": {
+    "displayName": "WydarzenieCzasowe",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "daneWydarzenia": {
+      "type": "component",
+      "repeatable": false,
+      "component": "wydarzenia.dane-wydarzenia",
+      "required": true
+    },
+    "termin": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

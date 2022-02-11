@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "informacje_czwartkowe",
+  "info": {
+    "singularName": "informacja-czwartkowa",
+    "pluralName": "informacje-czwartkowe",
+    "displayName": "Informacje Czwartkowe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numer": {
+      "required": true,
+      "type": "integer"
+    },
+    "data": {
+      "type": "date",
+      "required": true
+    },
+    "wydarzenia": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wydarzenie.wydarzenie",
+      "inversedBy": "informacje_czwartkowe"
+    }
+  }
+}
