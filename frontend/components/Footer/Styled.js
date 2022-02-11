@@ -25,7 +25,7 @@ const TextContent = styled.div`
 const Logo = () => {
   return (
     <StyledLogo>
-      <img src="img/logo.png" alt="" />
+      <img src="/img/logo.png" alt="" />
     </StyledLogo>
   );
 };

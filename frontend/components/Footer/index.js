@@ -3,7 +3,7 @@ import S from "./Styled";
 const Footer = () => {
   return (
     <S.Footer>
-      <img src="img/decorations/footer_wave.png" alt="" />
+      <img src="/img/decorations/footer_wave.png" alt="" />
       <S.Content>
         <S.Logo />
         <S.TextContent>
