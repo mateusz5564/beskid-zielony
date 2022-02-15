@@ -19,7 +19,7 @@ const ThursdayNewsletter = ({ info }) => {
     );
   }
 
-  const events = info.attributes.wydarzenia.data.map(event => {
+  const allEvents = info.attributes.wydarzenia.data.map(event => {
     return ({
       id: event.id,
       sponsorowane: event.attributes.sponsorowane,
@@ -34,6 +34,10 @@ const ThursdayNewsletter = ({ info }) => {
       miniaturka: event.attributes.obrazek.data.attributes.url,
     });
   });
+
+  const standardEvents = allEvents.filter(event => event.czasowe === false);
+
+  const deadlineEvents = allEvents.filter(event => event.czasowe === true);
 
   return (
     <>
@@ -50,7 +54,15 @@ const ThursdayNewsletter = ({ info }) => {
           <S.EventsSection>
             <h3>Bieżące wydarzenia</h3>
             <div className="events">
-              {events.map(event => {
+              {standardEvents.map(event => {
+                return (<EventCard event={event}></EventCard>)
+              })}
+            </div>
+          </S.EventsSection>
+          <S.EventsSection>
+            <h3>Wydarzenia czasowe</h3>
+            <div className="events">
+              {deadlineEvents.map(event => {
                 return (<EventCard event={event}></EventCard>)
               })}
             </div>
