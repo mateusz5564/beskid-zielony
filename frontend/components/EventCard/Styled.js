@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Wrapper = styled.article`
   font-size: 2rem;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme, sponsored }) =>
+    sponsored ? theme.colors.darkYellow[500] : theme.colors.white};
   color: ${({ theme }) => theme.colors.darkGray[600]};
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -10,13 +11,44 @@ const Wrapper = styled.article`
 
   .top {
     display: flex;
+    border-bottom: 10px solid white;
+
+    @media (max-width: 25rem) {
+      flex-wrap: wrap;
+    }
 
     .thumbnail {
-      flex-basis: 25rem;
+      position: relative;
+      flex-basis: 40%;
       flex-shrink: 0;
-      
+
+      @media (max-width: 25rem) {
+      flex-basis: 100%;
+    }
+
+      &::before,
+      &::after {
+        content: "";
+        display: ${({ sponsored }) => (sponsored ? "inline-block" : "none")};
+        position: absolute;
+        width: 10px;
+        background-color: ${({ theme }) => theme.colors.darkYellow[500]};
+        opacity: 0.8;
+        height: 20%;
+      }
+
+      &::before {
+        left: 0;
+        bottom: 0;
+      }
+
+      &::after {
+        right: 0;
+        top: 0;
+      }
+
       img {
-        width: 25rem;
+        width: 100%;
         height: 100%;
         object-fit: cover;
       }
@@ -34,6 +66,16 @@ const Wrapper = styled.article`
       p {
         font-size: 1.6rem;
         margin-bottom: 1.2rem;
+        line-height: 1;
+      }
+
+      .website {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: ${({theme}) => theme.colors.darkGreen[500]};
+        }
       }
 
       .ticket {
@@ -56,10 +98,12 @@ const Wrapper = styled.article`
 
   .description {
     align-self: stretch;
+    text-align: justify;
     height: 100%;
     padding: 1.6rem;
     font-size: 2rem;
-    background-color: ${({theme}) => theme.colors.lightGreen[50]};
+    background-color: ${({ theme, sponsored }) =>
+      sponsored ? theme.colors.darkYellow[500] : theme.colors.lightGreen[50]};
   }
 `;
 

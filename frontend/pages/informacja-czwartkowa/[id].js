@@ -33,10 +33,12 @@ const ThursdayNewsletter = ({ info }) => {
       opis: event.attributes.opis,
       miniaturka: event.attributes.obrazek.data.attributes.url,
     });
-  });
+  }).sort((firstEv, secondEv) => {
+    if(firstEv.termin > secondEv.termin) return 1;
+    return -1;
+  })
 
   const standardEvents = allEvents.filter(event => event.czasowe === false);
-
   const deadlineEvents = allEvents.filter(event => event.czasowe === true);
 
   return (
@@ -55,7 +57,7 @@ const ThursdayNewsletter = ({ info }) => {
             <h3>Bieżące wydarzenia</h3>
             <div className="events">
               {standardEvents.map(event => {
-                return (<EventCard event={event}></EventCard>)
+                return (<EventCard event={event} sponsored={event.sponsorowane}></EventCard>)
               })}
             </div>
           </S.EventsSection>
@@ -63,7 +65,7 @@ const ThursdayNewsletter = ({ info }) => {
             <h3>Wydarzenia czasowe</h3>
             <div className="events">
               {deadlineEvents.map(event => {
-                return (<EventCard event={event}></EventCard>)
+                return (<EventCard event={event} sponsored={event.sponsorowane}></EventCard>)
               })}
             </div>
           </S.EventsSection>

@@ -1,9 +1,10 @@
 import S from "./Styled";
 import { getFormattedDate, getFormattedTime } from "../../utils/formatDate";
+import BoldText from "../shared/BoldText";
 
-const EventsCard = ({ event }) => {
+const EventsCard = ({ event, sponsored }) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper sponsored={sponsored}>
       <div className="top">
         <div className="thumbnail">
           <img src={`http://localhost:1337${event.miniaturka}`} alt="" />
@@ -13,17 +14,19 @@ const EventsCard = ({ event }) => {
             <h4 className="title">{event.tytul}</h4>
             <p className="detailWithIcon">
               <img className="icon" src="/img/icons/calendar.png" alt="" />
-              {!event.czasowe &&
-                `${getFormattedDate(event.termin)}, ${getFormattedTime(event.termin)}`}
-              {event.czasowe && `do ${getFormattedDate(event.termin)}`}
+              <BoldText weight="500">
+                {!event.czasowe &&
+                  `${getFormattedDate(event.termin)}, ${getFormattedTime(event.termin)}`}
+                {event.czasowe && `do ${getFormattedDate(event.termin)}`}
+              </BoldText>
             </p>
             <p className="detailWithIcon">
               <img className="icon" src="/img/icons/location.png" alt="" />
-              {event.miejscowosc}, {event.lokalizacja}
+              <div><BoldText weight='500'>{event.miejscowosc}</BoldText>, {event.lokalizacja}</div>
             </p>
             <p className="detailWithIcon">
               <img className="icon" src="/img/icons/web.png" alt="" />
-              {event.stronaInternetowa}
+              <a className="website" href={event.stronaInternetowa}>{event.stronaInternetowa}</a>
             </p>
             <p className="ticket">wstęp: {event.wstep}</p>
           </div>

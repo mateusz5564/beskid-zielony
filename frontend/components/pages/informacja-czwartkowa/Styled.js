@@ -19,17 +19,17 @@ const Main = styled.main`
   h2 {
     font-size: 3.6rem;
   }
-
-  .events {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
-  }
 `;
 
 const EventsSection = styled.section`
   margin-top: 6.4rem;
-  
+
+  @media (max-width: 60rem) {
+    max-width: 63rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h3 {
     position: relative;
     font-size: 3.6rem;
@@ -37,19 +37,30 @@ const EventsSection = styled.section`
     margin-bottom: 3.6rem;
 
     &::before {
-      content: '';
+      content: "";
       display: block;
       height: 10px;
       width: 80px;
       border-radius: 5px;
-      background: ${({theme}) => `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.orange[500]})`};
+      background: ${({ theme }) =>
+        `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.orange[500]})`};
+    }
+  }
+
+  .events {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+
+    @media (max-width: 60rem) {
+      grid-template-columns: 1fr;
     }
   }
 `;
 
 const Styled = {
   Main,
-  EventsSection
+  EventsSection,
 };
 
 export default Styled;
