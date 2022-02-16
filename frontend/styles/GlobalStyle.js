@@ -10,10 +10,9 @@ const GlobalStyle = createGlobalStyle`
 html, body {
   height: 100%;
   font-size: 62.5%;
-  background-color: ${({theme}) => theme.colors.whiteGreen};
+  background-color: ${({ theme }) => theme.colors.whiteGreen};
 }
 body {
-  font-size: 100%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Baloo Bhai 2';
