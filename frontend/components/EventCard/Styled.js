@@ -13,7 +13,7 @@ const Wrapper = styled.article`
     display: flex;
     border-bottom: 10px solid white;
 
-    @media (max-width: 25rem) {
+    @media (max-width: 27rem) {
       flex-wrap: wrap;
     }
 
@@ -22,9 +22,9 @@ const Wrapper = styled.article`
       flex-basis: 40%;
       flex-shrink: 0;
 
-      @media (max-width: 25rem) {
-      flex-basis: 100%;
-    }
+      @media (max-width: 27rem) {
+        flex-basis: 100%;
+      }
 
       &::before,
       &::after {
@@ -38,18 +38,20 @@ const Wrapper = styled.article`
       }
 
       &::before {
-        left: 0;
-        bottom: 0;
+        left: 10px;
+        top: 0;
+        width: 20%;
+        height: 10px;
       }
 
       &::after {
-        right: 0;
+        left: 0;
         top: 0;
       }
 
       img {
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
         object-fit: cover;
       }
     }
@@ -74,7 +76,7 @@ const Wrapper = styled.article`
         color: inherit;
 
         &:hover {
-          color: ${({theme}) => theme.colors.darkGreen[500]};
+          color: ${({ theme }) => theme.colors.darkGreen[500]};
         }
       }
 
@@ -97,13 +99,41 @@ const Wrapper = styled.article`
   }
 
   .description {
-    align-self: stretch;
-    text-align: justify;
+    position: relative;
     height: 100%;
-    padding: 1.6rem;
-    font-size: 2rem;
     background-color: ${({ theme, sponsored }) =>
       sponsored ? theme.colors.darkYellow[500] : theme.colors.lightGreen[50]};
+
+    @media (max-width: 60rem) {
+      height: ${({descExpanded}) => descExpanded ? 'auto' : '4rem'};
+      padding-bottom: 3.75rem;
+    }
+
+    p {
+      text-align: justify;
+      padding: 1.6rem;
+      font-size: 2rem;
+    }
+
+    .expand-btn {
+      display: none;
+
+      @media (max-width: 60rem) {
+        display: block;
+      }
+
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 1rem 0;
+      margin: 0;
+      border: 0;
+      line-height: 1;
+      cursor: pointer;
+      color: inherit;
+      background-color: ${({ theme, sponsored }) =>
+        sponsored ? theme.colors.darkYellow[500] : theme.colors.lightGreen[50]};
+    }
   }
 `;
 
