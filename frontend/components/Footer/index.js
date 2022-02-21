@@ -18,7 +18,7 @@ const Footer = () => {
             administratora serwisu jest zabronione. 2019-2020 © beskidzielony.pl
           </S.Copyright>
         </S.TextContent>
-        <S.Logo />
+        <S.Logo className='secondLogo'/>
       </S.Content>
     </S.Footer>
   );

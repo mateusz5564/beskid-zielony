@@ -16,15 +16,25 @@ const Content = styled.div`
   background: ${({ theme }) =>
     `linear-gradient(${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
   color: ${({ theme }) => theme.colors.white};
+
+  @media (max-width: 44rem) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 
 const TextContent = styled.div`
   max-width: 80rem;
+  margin: 0 3.2rem;
+
+  @media (max-width: 44rem) {
+    margin-top: 1.8rem;
+  }
 `;
 
-const Logo = () => {
+const Logo = ({className}) => {
   return (
-    <StyledLogo>
+    <StyledLogo className={className}>
       <img src="/img/logo.png" alt="" />
     </StyledLogo>
   );
@@ -37,6 +47,12 @@ const StyledLogo = styled.div`
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 3px;
 
+  &.secondLogo {
+    @media (max-width: 44rem) {
+      display: none;
+    }
+  }
+
   img {
     height: 10rem;
   }
@@ -44,7 +60,12 @@ const StyledLogo = styled.div`
 
 const Authors = styled.p`
   font-size: 1.8rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.2rem;
+  text-align: justify;
+
+  @media (max-width: 31rem) {
+    text-align: center;
+  }
 `;
 
 const Copyright = styled.p`
