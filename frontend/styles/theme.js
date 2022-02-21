@@ -10,10 +10,11 @@ const colors = {
   },
   lightGreen: {
     500: '#68B92E',
-    100: '#C1F29D',
+    100: '#CDF9AE',
     50: '#E1FFCC',
   },
   darkYellow: {
+    600: '#E6C10A',
     500: '#F9CF00',
   },
   orange: {

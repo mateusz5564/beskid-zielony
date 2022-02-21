@@ -5,6 +5,10 @@ const Container = styled.div`
   text-align: ${({ $textAlign }) => ($textAlign ? $textAlign : "initial")};
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 28rem) {
+    padding: 0 1rem;
+  }
 `;
 
 export default Container;

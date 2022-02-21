@@ -7,9 +7,8 @@ const EventsCard = ({ event, sponsored }) => {
   const [descExpanded, setDescExpanded] = useState(false);
 
   const handleExpanding = () => {
-    setDescExpanded((prevState) => !prevState);
-  }
-  
+    setDescExpanded(prevState => !prevState);
+  };
 
   return (
     <S.Wrapper sponsored={sponsored} descExpanded={descExpanded}>
@@ -18,36 +17,36 @@ const EventsCard = ({ event, sponsored }) => {
           <img src={`http://localhost:1337${event.miniaturka}`} alt="" />
         </div>
         <div className="right">
-          <div>
-            <h4 className="title">{event.tytul}</h4>
-            <p className="detailWithIcon">
-              <img className="icon" src="/img/icons/calendar.png" alt="" />
+          <h4 className="title">{event.tytul}</h4>
+          <div className="detailWithIcon">
+            <img className="icon" src="/img/icons/calendar.png" alt="" />
+            <p>
               <BoldText weight="500">
                 {!event.czasowe &&
                   `${getFormattedDate(event.termin)}, ${getFormattedTime(event.termin)}`}
                 {event.czasowe && `do ${getFormattedDate(event.termin)}`}
               </BoldText>
             </p>
-            <p className="detailWithIcon">
-              <img className="icon" src="/img/icons/location.png" alt="" />
-              <div>
-                <BoldText weight="500">{event.miejscowosc}</BoldText>, {event.lokalizacja}
-              </div>
-            </p>
-            <p className="detailWithIcon">
-              <img className="icon" src="/img/icons/web.png" alt="" />
-              <a className="website" href={event.stronaInternetowa}>
-                {event.stronaInternetowa}
-              </a>
-            </p>
-            <p className="ticket">wstęp: {event.wstep}</p>
           </div>
+          <div className="detailWithIcon">
+            <img className="icon" src="/img/icons/location.png" alt="" />
+            <p>
+              <BoldText weight="500">{event.miejscowosc}</BoldText>, {event.lokalizacja}
+            </p>
+          </div>
+          <div className="detailWithIcon">
+            <img className="icon" src="/img/icons/web.png" alt="" />
+            <a className="website" href={event.stronaInternetowa}>
+              {event.stronaInternetowa}
+            </a>
+          </div>
+          <p className="ticket">wstęp: {event.wstep}</p>
         </div>
       </div>
-      <div className="description">
-        <p className="description">{event.opis}</p>
-        <button className="expand-btn" onClick={handleExpanding}>{descExpanded ? 'zwiń opis...' : 'rozwiń opis...'}</button>
-      </div>
+      <p className="description">{event.opis}</p>
+      <button className="expand-btn" onClick={handleExpanding}>
+        {descExpanded ? "zwiń opis..." : "rozwiń opis..."}
+      </button>
     </S.Wrapper>
   );
 };
