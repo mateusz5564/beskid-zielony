@@ -8,21 +8,22 @@ const Form = styled.form`
   p {
     font-size: 2.5rem;
     text-align: center;
-    color: ${({theme}) => theme.colors.darkGreen[700]};
+    color: ${({ theme }) => theme.colors.darkGreen[700]};
     margin-bottom: 2.4rem;
   }
 
   input {
+    width: 100%;
     margin-bottom: 1.6rem;
     border-radius: 50px;
     border: none;
     padding: 1.6rem 2.4rem;
     font-size: 2.5rem;
     text-align: center;
-    
+
     &::placeholder {
       font-weight: 300;
-      color: ${({theme}) => theme.colors.darkGreen[500]};
+      color: ${({ theme }) => theme.colors.darkGreen[500]};
     }
   }
 `;

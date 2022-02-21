@@ -6,16 +6,25 @@ const Link = styled.a`
   justify-content: center;
   align-items: center;
   padding: 1.6rem 3.2rem;
-  background: ${({theme}) => `linear-gradient(${theme.colors.darkYellow[500]}, ${theme.colors.orange[500]})`};
+  background: ${({theme}) => `radial-gradient(circle at center, ${theme.colors.darkYellow[500]}, ${theme.colors.lightGreen[50]})`};
   color: ${({theme}) => theme.colors.darkGreen[700]};
   font-size: 2.4rem;
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
 
+  @media (max-width: 44rem) {
+    text-align: center;
+    word-break: break-word;
+  }
+
   & > img {
     margin: .8rem 1.6rem;
     height: 4.5rem;
+
+    @media (max-width: 32rem) {
+      display: none;
+    }
   }
 `;
 
