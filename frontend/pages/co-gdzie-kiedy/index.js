@@ -71,8 +71,27 @@ const CoGdzieKiedy = () => {
           <NewsletterForm />
         </S.Newsletter>
         <S.Ads>
-          <SimpleSlider images={museumsImages} slidesPerView={2} />
-          <SimpleSlider images={agrotourismImages} slidesPerView={3} />
+          <SimpleSlider
+            images={museumsImages}
+            slidesPerView={1}
+            breakpoints={{
+              1200: {
+                slidesPerView: 2,
+              },
+            }}
+          />
+          <SimpleSlider
+            images={agrotourismImages}
+            slidesPerView={1}
+            breakpoints={{
+              1100: {
+                slidesPerView: 2,
+              },
+              1600: {
+                slidesPerView: 3,
+              },
+            }}
+          />
         </S.Ads>
       </main>
     </>

@@ -4,7 +4,7 @@ import { SwiperSlide } from "swiper/react";
 import S from "./Styled";
 import "swiper/css";
 
-const SimpleSlider = ({ images, slidesPerView }) => {
+const SimpleSlider = ({ images, slidesPerView, breakpoints }) => {
   return (
     <S.StyledSwiper
       modules={[Autoplay]}
@@ -12,6 +12,7 @@ const SimpleSlider = ({ images, slidesPerView }) => {
       spaceBetween={24}
       autoplay={{ delay: 5000, pauseOnMouseEnter: true, disableOnInteraction: false }}
       loop
+      breakpoints={breakpoints}
     >
       {images.map((imgSrc, index) => {
         return (
