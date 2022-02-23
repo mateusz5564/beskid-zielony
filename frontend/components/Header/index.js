@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import NextLink from "next/link";
 import S from "./Styled";
 import Link from "./Link";
 import HeaderImg from "../../public/img/decorations/pasek.jpg";
@@ -12,9 +13,13 @@ const Header = () => {
   return (
     <S.Header>
       <S.Nav>
-        <S.Logo>
-          <Image src={Logo} alt="" />
-        </S.Logo>
+        <NextLink href="/">
+          <a>
+            <S.Logo>
+              <Image src={Logo} alt="" />
+            </S.Logo>
+          </a>
+        </NextLink>
         <S.List>
           <S.ListItem>
             <Link href="/co-gdzie-kiedy" isActive={pathname === "/co-gdzie-kiedy"}>
@@ -23,7 +28,10 @@ const Header = () => {
           </S.ListItem>
 
           <S.ListItem>
-            <Link href="/informacja-czwartkowa/1" isActive={pathname.includes("informacja-czwartkowa")}>
+            <Link
+              href="/informacja-czwartkowa/1"
+              isActive={pathname.includes("informacja-czwartkowa")}
+            >
               Informacja czwartkowa
             </Link>
           </S.ListItem>
