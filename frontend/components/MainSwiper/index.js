@@ -8,13 +8,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
-const MainSwiper = ({ images }) => {
+const MainSwiper = ({ images, breakpoints }) => {
   return (
     <S.StyledSwiper
       modules={[Autoplay, EffectCoverflow, Navigation, Pagination]}
       effect="coverflow"
       centeredSlides={true}
-      slidesPerView={2}
+      slidesPerView={1}
+      breakpoints={breakpoints}
       coverflowEffect={{
         rotate: 20,
         stretch: 100,

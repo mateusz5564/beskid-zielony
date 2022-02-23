@@ -3,11 +3,19 @@ import TextOnBg from '../../shared/TextOnBg';
 
 const Main = styled.main`
   margin-top: 5rem;
+
+  @media (max-width: 800px) {
+    margin-top: 2.4rem;
+  }
 `;
 
 const SectionText = styled.section`
   position: relative;
   margin-top: 10rem;
+
+  @media (max-width: 800px) {
+    margin-top: 2.4rem;
+  }
 
   ${TextOnBg} {
     margin: 0 auto;
@@ -17,14 +25,20 @@ const SectionText = styled.section`
     height: 20rem;
   }
 
-  .left {
+  .left, .right {
     position: absolute;
+
+    @media (max-width: 66rem) {
+      display: none;
+    }
+  }
+
+  .left {
     left: 0;
     top: 0;
   }
 
   .right {
-    position: absolute;
     right: 0;
     bottom: 0;
   }
