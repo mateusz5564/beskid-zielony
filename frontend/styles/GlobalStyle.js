@@ -16,6 +16,12 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-family: 'Baloo Bhai 2';
+
+  &.disable-scrollbar {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+  }
 }
 img, picture, video, canvas, svg {
   display: block;
