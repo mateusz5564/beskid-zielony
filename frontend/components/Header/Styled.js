@@ -155,8 +155,13 @@ const HeaderImg = styled.div`
   height: 16rem;
   position: relative;
 
+  picture {
+    height: 100%;
+  }
+
   img {
     object-fit: cover;
+    height: 100%;
   }
 
   /* background: url("img/decorations/pasek.jpg");
