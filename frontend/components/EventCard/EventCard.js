@@ -5,7 +5,7 @@ import BoldText from "../shared/BoldText";
 
 const EventsCard = ({ event, sponsored }) => {
   const [descExpanded, setDescExpanded] = useState(false);
-
+  
   const handleExpanding = () => {
     setDescExpanded(prevState => !prevState);
   };
@@ -14,7 +14,7 @@ const EventsCard = ({ event, sponsored }) => {
     <S.Wrapper sponsored={sponsored} descExpanded={descExpanded}>
       <div className="top">
         <div className="thumbnail">
-          <img src={`http://localhost:1337${event.miniaturka}`} alt="" />
+          <img src={event.miniaturka} alt="" />
         </div>
         <div className="right">
           <h4 className="title">{event.tytul}</h4>

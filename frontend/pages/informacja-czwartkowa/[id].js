@@ -115,11 +115,13 @@ const ThursdayNewsletter = ({ info }) => {
   );
 };
 
+const apiRoot = process.env.ROOT_ENDPOINT;
+
 export async function getStaticPaths() {
   let resJSON;
 
   try {
-    const res = await fetch("http://localhost:1337/api/informacje-czwartkowe/");
+    const res = await fetch(`${apiRoot}/informacje-czwartkowe/`);
     resJSON = await res.json();
   } catch (e) {
     console.log(e);
@@ -140,7 +142,7 @@ export async function getStaticProps({ params }) {
 
   try {
     const res = await fetch(
-      `http://localhost:1337/api/informacje-czwartkowe/${params.id}?populate[wydarzenia][populate][0]=obrazek`
+      `${apiRoot}/informacje-czwartkowe/${params.id}?populate[wydarzenia][populate][0]=obrazek`
     );
     resJSON = await res.json();
   } catch (e) {
