@@ -10,8 +10,22 @@ const ThursdayNewsletter = ({ info }) => {
   const router = useRouter();
   const [breakpointColumnsObj, setBreakpointColumnsObj] = useState({});
 
+  useEffect(() => {
+    // 62.5% of browser font size, because we set font-size of root to 62.5%
+    const computedRootFontSize = parseFloat(
+      window.getComputedStyle(document.documentElement).getPropertyValue("font-size")
+    );
+    // but we use rems in media queries and they are based on 100% font-size of root
+    const originalRootFontSize = computedRootFontSize * (1000 / 625);
+
+    setBreakpointColumnsObj({
+      default: 2,
+      [75 * originalRootFontSize]: 1,
+    });
+  }, []);
+
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <h1>Loading...</h1>;
   }
 
   if (!info.id) {
@@ -45,20 +59,6 @@ const ThursdayNewsletter = ({ info }) => {
 
   const standardEvents = allEvents.filter(event => event.czasowe === false);
   const deadlineEvents = allEvents.filter(event => event.czasowe === true);
-
-  useEffect(() => {
-    // 62.5% of browser font size, because we set font-size of root to 62.5%
-    const computedRootFontSize = parseFloat(
-      window.getComputedStyle(document.documentElement).getPropertyValue("font-size")
-    );
-    // but we use rems in media queries and they are based on 100% font-size of root
-    const originalRootFontSize = computedRootFontSize * (1000 / 625);
-
-    setBreakpointColumnsObj({
-      default: 2,
-      [75 * originalRootFontSize]: 1,
-    });
-  }, []);
 
   return (
     <>
