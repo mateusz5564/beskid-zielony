@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 const MainSwiper = ({ images, breakpoints }) => {
+
   return (
     <S.StyledSwiper
       modules={[Autoplay, EffectCoverflow, Navigation, Pagination]}
@@ -28,10 +29,10 @@ const MainSwiper = ({ images, breakpoints }) => {
       navigation
       pagination={{ clickable: true }}
     >
-      {images.map((imgSrc, index) => {
+      {images.map((img) => {
         return (
-          <SwiperSlide key={index}>
-            <Image src={imgSrc} alt="" />
+          <SwiperSlide key={img.src}>
+            <Image src={img} alt="" />
           </SwiperSlide>
         );
       })}
