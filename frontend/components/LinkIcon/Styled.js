@@ -21,7 +21,6 @@ const Link = styled.a`
   & > img {
     margin: .8rem 1.6rem;
     height: 4.5rem;
-    width: auto;
 
     @media (max-width: 32rem) {
       display: none;
