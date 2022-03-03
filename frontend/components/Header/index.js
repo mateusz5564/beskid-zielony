@@ -79,7 +79,7 @@ const Header = () => {
       <S.HeaderImg>
         {/* <Image src={HeaderImg} alt="" layout="fill" /> */}
         <picture>
-          <source srcset="/img/decorations/pasek.jpg" media="(min-width: 62.5rem)"/>
+          <source srcSet="/img/decorations/pasek.jpg" media="(min-width: 62.5rem)"/>
           <img src="/img/decorations/pasek_mob.jpg" alt=""/>
         </picture>
       </S.HeaderImg>
