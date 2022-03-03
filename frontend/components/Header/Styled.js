@@ -162,11 +162,8 @@ const HeaderImg = styled.div`
   img {
     object-fit: cover;
     height: 100%;
+    width: 100%;
   }
-
-  /* background: url("img/decorations/pasek.jpg");
-  background-position: center;
-  background-size: cover; */
 `;
 
 const Logo = styled.div`
