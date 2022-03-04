@@ -32,7 +32,7 @@ const MainSwiper = ({ images, breakpoints }) => {
       {images.map((img) => {
         return (
           <SwiperSlide key={img.src}>
-            <Image src={img} alt="" />
+            <Image src={img} placeholder="blur" layout="responsive" alt="" />
           </SwiperSlide>
         );
       })}

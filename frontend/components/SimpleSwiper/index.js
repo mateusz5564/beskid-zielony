@@ -14,10 +14,10 @@ const SimpleSlider = ({ images, slidesPerView, breakpoints }) => {
       loop
       breakpoints={breakpoints}
     >
-      {images.map((imgSrc, index) => {
+      {images.map((img) => {
         return (
-          <SwiperSlide key={index}>
-            <Image src={imgSrc} alt="" />
+          <SwiperSlide key={img.src}>
+            <Image src={img} placeholder="blur" layout="responsive" alt="" />
           </SwiperSlide>
         );
       })}
