@@ -32,29 +32,18 @@ const TextContent = styled.div`
   }
 `;
 
-const Logo = ({className}) => {
-  return (
-    <StyledLogo className={className}>
-      <img src="/img/logo.png" alt="" />
-    </StyledLogo>
-  );
-};
-
-const StyledLogo = styled.div`
+const Logo = styled.div`
   align-self: flex-end;
   flex-shrink: 0;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 3px;
+  width: 9rem;
 
   &.secondLogo {
     @media (max-width: 44rem) {
       display: none;
     }
-  }
-
-  img {
-    height: 10rem;
   }
 `;
 
