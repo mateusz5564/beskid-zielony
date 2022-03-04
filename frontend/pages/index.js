@@ -1,9 +1,12 @@
 import Head from "next/head";
+import Image from "next/image";
 import MainSwiper from "../components/MainSwiper";
 import Container from "../components/shared/Container";
 import TextOnBg from "../components/shared/TextOnBg";
 import regionImages from "../utils/regionImages";
 import S from "../components/pages/index/Styled";
+import DekorLeft from "../public/img/decorations/dekor_left.png";
+import DekorRight from "../public/img/decorations/dekor_right.png";
 
 export default function Home() {
   return (
@@ -23,8 +26,12 @@ export default function Home() {
           />
         </Container>
         <S.SectionText>
-          <img className="left" src="img/decorations/dekor_left.png" alt="" />
-          <img className="right" src="img/decorations/dekor_right.png" alt="" />
+          <div className="dekor">
+            <Image src={DekorLeft} layout="responsive" priority alt="" />
+          </div>
+          <div className="dekor right">
+            <Image src={DekorRight} layout="responsive" priority alt="" />
+          </div>
           <Container>
             <TextOnBg>
               Znajdujecie się Państwo na portalu, który aspiruje do miana wizytówki “Magicznej

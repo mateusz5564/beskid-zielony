@@ -21,21 +21,13 @@ const SectionText = styled.section`
     margin: 0 auto;
   }
 
-  img {
-    height: 20rem;
-  }
-
-  .left, .right {
+  .dekor {
     position: absolute;
+    width: 12rem;
 
     @media (max-width: 66rem) {
       display: none;
     }
-  }
-
-  .left {
-    left: 0;
-    top: 0;
   }
 
   .right {
