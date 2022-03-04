@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import S from "./Styled";
 import Link from "./Link";
 import HeaderImg from "../../public/img/decorations/pasek.jpg";
+import HeaderMobImg from "../../public/img/decorations/pasek_mob.jpg";
 import Logo from "../../public/img/logo.png";
 import Backdrop from "../shared/Backdrop";
 
@@ -33,7 +34,7 @@ const Header = () => {
         <NextLink href="/">
           <a>
             <S.Logo>
-              <Image src={Logo} alt="" />
+              <Image src={Logo} priority alt="" />
             </S.Logo>
           </a>
         </NextLink>
@@ -77,11 +78,8 @@ const Header = () => {
         </S.Hamburger>
       </S.Nav>
       <S.HeaderImg>
-        {/* <Image src={HeaderImg} alt="" layout="fill" /> */}
-        <picture>
-          <source srcSet="/img/decorations/pasek.jpg" media="(min-width: 62.5rem)"/>
-          <img src="/img/decorations/pasek_mob.jpg" alt=""/>
-        </picture>
+        <Image className="desktop" src={HeaderImg} alt="" priority layout="fill" objectFit="cover"/>
+        <Image className="mobile" src={HeaderMobImg} alt="" priority layout="fill" objectFit="cover"/> 
       </S.HeaderImg>
     </S.Header>
   );

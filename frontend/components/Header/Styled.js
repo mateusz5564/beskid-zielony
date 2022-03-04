@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 const Header = styled.header`
   font-size: 1.6rem;
@@ -71,7 +71,8 @@ const SideNav = styled.ul`
   right: 0;
   transform: translateX(100%);
   list-style: none;
-  background: ${({theme}) => `linear-gradient( ${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
+  background: ${({ theme }) =>
+    `linear-gradient( ${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
   min-width: 30rem;
   min-height: 100vh;
   padding: 1.6rem;
@@ -79,7 +80,7 @@ const SideNav = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 
   @media (max-width: 43rem) {
     display: flex;
@@ -89,7 +90,7 @@ const SideNav = styled.ul`
     min-width: 100vw;
   }
 
-  ${({isSideNavOpen}) => isSideNavOpen ? sideNavOpenCss : null};
+  ${({ isSideNavOpen }) => (isSideNavOpen ? sideNavOpenCss : null)};
 `;
 
 const SideNavItem = styled.li`
@@ -134,35 +135,31 @@ const Hamburger = styled.button`
   @media (max-width: 43rem) {
     display: block;
   }
-  
+
   span {
     display: block;
     width: 4rem;
     height: 0.4rem;
     margin-bottom: 0.7rem;
     background-color: ${({ theme }) => theme.colors.darkGreen[700]};
-    transition: all .2s;
+    transition: all 0.2s;
 
     &:last-child {
       margin-bottom: 0;
     }
   }
 
-  ${({isSideNavOpen}) => isSideNavOpen ? hamburgerOpenCss : null}
-  `;
+  ${({ isSideNavOpen }) => (isSideNavOpen ? hamburgerOpenCss : null)}
+`;
 
 const HeaderImg = styled.div`
   height: 16rem;
   position: relative;
 
-  picture {
-    height: 100%;
-  }
-
-  img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+  span:nth-child(2) {
+    @media (min-width: 62.5rem) {
+      display: none !important;
+    }
   }
 `;
 
