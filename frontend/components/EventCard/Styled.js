@@ -23,11 +23,13 @@ const Wrapper = styled.article`
 
     .thumbnail {
       position: relative;
-      flex-basis: 40%;
-      flex-shrink: 0;
+      flex: 40% 0 0;
+      height: 0;
+      padding-bottom: 40%;
 
       @media (max-width: 35rem) {
-        flex-basis: 100%;
+        flex: 100%;
+        padding-bottom: 100%;
       }
 
       &::before,
@@ -44,6 +46,7 @@ const Wrapper = styled.article`
         top: 0;
         width: 20%;
         height: 1rem;
+        z-index: 1;
       }
 
       &::after {

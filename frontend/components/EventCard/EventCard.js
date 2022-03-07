@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 import S from "./Styled";
 import { getFormattedDate, getFormattedTime } from "../../utils/formatDate";
 import BoldText from "../shared/BoldText";
@@ -14,7 +15,7 @@ const EventsCard = ({ event, sponsored }) => {
     <S.Wrapper sponsored={sponsored} descExpanded={descExpanded}>
       <div className="top">
         <div className="thumbnail">
-          <img src={event.miniaturka} alt="" />
+          <Image src={event.miniaturka} layout='fill' objectFit="cover" alt="" />
         </div>
         <div className="right">
           <h4 className="title">{event.tytul}</h4>
