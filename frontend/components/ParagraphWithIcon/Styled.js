@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-direction: ${({ right }) => (right ? "row-reverse" : "row")};
 
   .icon {
+    flex: 20rem 0 0;
     margin-left: ${({ right }) => (right ? "3.2rem" : "0")};
     margin-right: ${({ right }) => (!right ? "3.2rem" : "0")};
   }

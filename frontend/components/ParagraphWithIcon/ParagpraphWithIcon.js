@@ -1,12 +1,15 @@
-import S from './Styled';
+import Image from "next/image";
+import S from "./Styled";
 
-const ParagraphWithIcon = ({className, children, iconSrc, right}) => {
-  return ( 
+const ParagraphWithIcon = ({ className, children, icon, right }) => {
+  return (
     <S.Wrapper className={className} right={right}>
-      <img className='icon' src={iconSrc} alt="" />
-      <p className='text'>{children}</p>
+      <div className="icon">
+        <Image layout="responsive" priority src={icon} alt="" />
+      </div>
+      <p className="text">{children}</p>
     </S.Wrapper>
-   );
-}
- 
+  );
+};
+
 export default ParagraphWithIcon;
