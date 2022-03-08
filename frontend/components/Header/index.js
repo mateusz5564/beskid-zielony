@@ -34,7 +34,7 @@ const Header = () => {
         <NextLink href="/">
           <a>
             <S.Logo>
-              <Image src={Logo} priority alt="" />
+              <Image src={Logo} priority alt="Home page" />
             </S.Logo>
           </a>
         </NextLink>

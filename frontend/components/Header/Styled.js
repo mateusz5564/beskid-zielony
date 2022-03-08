@@ -54,10 +54,18 @@ const Link = styled.a`
   span {
     display: block;
     height: 5px;
-    background: ${({ theme, isActive }) =>
+    opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+    background-image: ${({ theme, isActive }) =>
       isActive
         ? `linear-gradient(to right, ${theme.colors.orange[500]}, ${theme.colors.darkGreen[500]})`
         : theme.colors.white};
+    transition: all 0.3s ease-in;
+  }
+
+  &:hover span {
+    background-image: ${({ theme }) =>
+      `linear-gradient(to right, ${theme.colors.orange[500]}, ${theme.colors.darkGreen[500]})`};
+    opacity: 1;
   }
 `;
 
