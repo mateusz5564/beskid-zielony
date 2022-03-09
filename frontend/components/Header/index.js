@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -13,20 +13,25 @@ const Header = () => {
   const router = useRouter();
   const pathname = router.pathname;
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  
+  const [showDesktopHeaderImg, setShowDesktopHeaderImg] = useState(null);
+
   const closeModal = () => {
     setIsSideNavOpen(false);
-    document.body.classList.remove('disable-scrollbar');
-  }
+    document.body.classList.remove("disable-scrollbar");
+  };
 
   const openModal = () => {
     setIsSideNavOpen(true);
-    document.body.classList.add('disable-scrollbar');
-  }
+    document.body.classList.add("disable-scrollbar");
+  };
 
   const handleHamburger = () => {
     isSideNavOpen ? closeModal() : openModal();
   };
+
+  useEffect(() => {
+    setShowDesktopHeaderImg(window.matchMedia("(min-width: 62.5rem)").matches);
+  }, []);
 
   return (
     <S.Header>
@@ -78,8 +83,12 @@ const Header = () => {
         </S.Hamburger>
       </S.Nav>
       <S.HeaderImg>
-        <Image className="desktop" src={HeaderImg} alt="" priority layout="fill" objectFit="cover"/>
-        <Image className="mobile" src={HeaderMobImg} alt="" priority layout="fill" objectFit="cover"/> 
+        {showDesktopHeaderImg === true && (
+          <Image src={HeaderImg} alt="" priority layout="fill" objectFit="cover" />
+        )}
+        {showDesktopHeaderImg === false && (
+          <Image src={HeaderMobImg} alt="" priority layout="fill" objectFit="cover" />
+        )}
       </S.HeaderImg>
     </S.Header>
   );

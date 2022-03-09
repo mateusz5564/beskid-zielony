@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 const Header = styled.header`
   font-size: 1.6rem;
   background-color: ${({ theme }) => theme.colors.white};
-  /* margin-bottom: 5rem; */
 `;
 
 const Nav = styled.nav`
@@ -163,12 +162,6 @@ const Hamburger = styled.button`
 const HeaderImg = styled.div`
   height: 16rem;
   position: relative;
-
-  span:nth-child(2) {
-    @media (min-width: 62.5rem) {
-      display: none !important;
-    }
-  }
 `;
 
 const Logo = styled.div`
@@ -177,7 +170,6 @@ const Logo = styled.div`
   position: absolute;
   top: 0;
   left: 3.2rem;
-  /* transform: translate(-50%, -50%); */
   border-radius: 10px;
   width: 9rem;
 `;
