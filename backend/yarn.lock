@@ -1319,6 +1319,29 @@
   "resolved" "https://registry.npmjs.org/@request/interface/-/interface-0.1.0.tgz"
   "version" "0.1.0"
 
+"@sendgrid/client@^7.4.7":
+  "integrity" "sha512-q4U5OhcbJjs+lLVv/LhZSc28feiVCFMgvG9aYcRI5X4tKArnrrGDWb5HMITR9vaAtX42TXhyPFjHr1fk/Q1loQ=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/client/-/client-7.6.1.tgz"
+  "version" "7.6.1"
+  dependencies:
+    "@sendgrid/helpers" "^7.6.0"
+    "axios" "^0.21.4"
+
+"@sendgrid/helpers@^7.4.6", "@sendgrid/helpers@^7.6.0":
+  "integrity" "sha512-0uWD+HSXLl4Z/X3cN+UMQC20RE7xwAACgppnfjDyvKG0KvJcUgDGz7HDdQkiMUdcVWfmyk6zKSg7XKfKzBjTwA=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/helpers/-/helpers-7.6.0.tgz"
+  "version" "7.6.0"
+  dependencies:
+    "deepmerge" "^4.2.2"
+
+"@sendgrid/mail@7.4.7":
+  "integrity" "sha512-lGfXJBEx7PMQje/NsVsebF6MdP2ptHWjmuI4YANjReAQlIGq3Cqm4JLP5Fb4n5Bbr1LXLCM7R0gJo+/PT6ENKw=="
+  "resolved" "https://registry.npmjs.org/@sendgrid/mail/-/mail-7.4.7.tgz"
+  "version" "7.4.7"
+  dependencies:
+    "@sendgrid/client" "^7.4.7"
+    "@sendgrid/helpers" "^7.4.6"
+
 "@sentry/core@6.3.0":
   "integrity" "sha512-voot/lJ9gRXB6bx6tVqbEbD6jOd4Sx6Rfmm6pzfpom9C0q+fjIZTatTLq8GdXj8DzxaH1MBDSwtaq/eC3NqYpA=="
   "resolved" "https://registry.npmjs.org/@sentry/core/-/core-6.3.0.tgz"
@@ -1705,6 +1728,14 @@
     "url-join" "4.0.1"
     "uuid" "^3.1.0"
 
+"@strapi/provider-email-sendgrid@^4.1.3":
+  "integrity" "sha512-dnF6EwAGr+Oki8Y0CHTq5xxvIObpuLhMQRqKVIxxsa91+20KK2GiQsb/YJ/agA3CLU7YUYlyQBy9ifTKZVYKkA=="
+  "resolved" "https://registry.npmjs.org/@strapi/provider-email-sendgrid/-/provider-email-sendgrid-4.1.3.tgz"
+  "version" "4.1.3"
+  dependencies:
+    "@sendgrid/mail" "7.4.7"
+    "@strapi/utils" "4.1.3"
+
 "@strapi/provider-email-sendmail@4.0.7":
   "integrity" "sha512-tpfFQgt9tzFvMspUatttpiMQ/GRr8bJ7K7snbmfCQTVurc0FBLLUWLrk3lTgIK8XGdIiYvny9hVXI9/obYaD3w=="
   "resolved" "https://registry.npmjs.org/@strapi/provider-email-sendmail/-/provider-email-sendmail-4.0.7.tgz"
@@ -1800,6 +1831,17 @@
   "integrity" "sha512-MMT6zIg9G0SMUCHAB27OrDrrU7bIXcg0FXSlyOAyzXMV5aZKXp9vbS5pPmxSc5nxOvooPxjWRLJB8sLyM6f7sw=="
   "resolved" "https://registry.npmjs.org/@strapi/utils/-/utils-4.1.2.tgz"
   "version" "4.1.2"
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    "date-fns" "2.24.0"
+    "http-errors" "1.8.0"
+    "lodash" "4.17.21"
+    "yup" "0.32.9"
+
+"@strapi/utils@4.1.3":
+  "integrity" "sha512-AAGLx7nO2vFxWj1ibwPDFNVwH2R9aXg6SbtrRLYaohZYOC1ldmn1htbwJiFG29GLlo9lvI4mmBeElzhZUb4Qsw=="
+  "resolved" "https://registry.npmjs.org/@strapi/utils/-/utils-4.1.3.tgz"
+  "version" "4.1.3"
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     "date-fns" "2.24.0"
@@ -2596,6 +2638,13 @@
   "integrity" "sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA=="
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.11.0.tgz"
   "version" "1.11.0"
+
+"axios@^0.21.4":
+  "integrity" "sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
+  "version" "0.21.4"
+  dependencies:
+    "follow-redirects" "^1.14.0"
 
 "axios@0.24.0":
   "integrity" "sha512-Q6cWsys88HoPgAaFAVUb0WpPk0O8iTeisR9IMqy9G8AbO4NlpVknrnQS03zzF9PGAWgO3cgletO3VjV/P7VztA=="
@@ -4805,7 +4854,7 @@
   "resolved" "https://registry.npmjs.org/fn.name/-/fn.name-1.1.0.tgz"
   "version" "1.1.0"
 
-"follow-redirects@^1.0.0", "follow-redirects@^1.14.4", "follow-redirects@^1.14.7":
+"follow-redirects@^1.0.0", "follow-redirects@^1.14.0", "follow-redirects@^1.14.4", "follow-redirects@^1.14.7":
   "integrity" "sha512-+hbxoLbFMbRKDwohX8GkTataGqO6Jb7jGwpAlwgy2bIz25XtRm7KEzJM76R1WiNT5SwZkX4Y75SwBolkpmE7iQ=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.7.tgz"
   "version" "1.14.7"
@@ -7291,7 +7340,14 @@
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-4.3.0.tgz"
   "version" "4.3.0"
 
-"node-fetch@^2.6.1", "node-fetch@2.6.7":
+"node-fetch@^2.6.1":
+  "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
+  "version" "2.6.7"
+  dependencies:
+    "whatwg-url" "^5.0.0"
+
+"node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
