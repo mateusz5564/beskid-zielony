@@ -9,7 +9,7 @@ module.exports = {
       try {
         const { data } = await axios({
           method: "get",
-          url: "http://localhost:1337/api/newsletter-emails",
+          url: `${process.env.MY_HEROKU_URL}api/newsletter-emails`,
         });
 
         const emails = data.data.map((emailObj) => emailObj.attributes.email);
