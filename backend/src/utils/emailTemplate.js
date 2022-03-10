@@ -12,7 +12,7 @@ module.exports = {
         BIULETYN - NEWSLETTER NR <%- numer %>/<%- dataNewslettera %>>
       </span>
     </h1>
-    <a href="https://beskid-zielony.herokuapp.com/informacja-czwartkowa/<%- id %>" style="display: block; text-align: center;">sprawdź pełną informacje na naszej stronie</a>
+    <a href="https://beskid-zielony.vercel.app/informacja-czwartkowa/<%- id %>" style="display: block; text-align: center;">sprawdź pełną informacje na naszej stronie</a>
     <hr>
     <h2 style="font-size: 1.4rem; font-weight: 500; margin: .5rem 0;">Wydarzenia:<h2 style="font-size: 1.4rem; font-weight: 500; margin: .5rem 0;">
     <ul style="font-size: .8rem;">
