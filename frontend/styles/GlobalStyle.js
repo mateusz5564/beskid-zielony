@@ -17,6 +17,13 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: 'Baloo Bhai 2';
 
+  //stick footer to the bottom
+  #__next {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   &.disable-scrollbar {
     position: fixed;
     overflow-y: scroll;

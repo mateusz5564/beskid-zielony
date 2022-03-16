@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Footer = styled.footer`
-  margin-top: 10rem;
+  padding-top: 7.6rem;
+  margin-top: auto;
   text-align: center;
 
   & > img {
