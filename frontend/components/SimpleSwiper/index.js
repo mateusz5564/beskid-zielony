@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { Autoplay } from "swiper";
-import { SwiperSlide } from "swiper/react";
-import S from "./Styled";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const SimpleSlider = ({ images, slidesPerView, breakpoints }) => {
+const SimpleSwiper = ({ items, slidesPerView, breakpoints }) => {
   return (
-    <S.StyledSwiper
+    <Swiper
       modules={[Autoplay]}
       slidesPerView={slidesPerView}
       spaceBetween={24}
@@ -14,15 +13,17 @@ const SimpleSlider = ({ images, slidesPerView, breakpoints }) => {
       loop
       breakpoints={breakpoints}
     >
-      {images.map((img) => {
+      {items.map(item => {
         return (
-          <SwiperSlide key={img.src}>
-            <Image src={img} placeholder="blur" layout="responsive" alt="" />
+          <SwiperSlide key={item.url}>
+            <a href={item.url} target="_blank">
+              <Image src={item.img} placeholder="blur" layout="responsive" alt="" />
+            </a>
           </SwiperSlide>
         );
       })}
-    </S.StyledSwiper>
+    </Swiper>
   );
 };
 
-export default SimpleSlider;
+export default SimpleSwiper;
