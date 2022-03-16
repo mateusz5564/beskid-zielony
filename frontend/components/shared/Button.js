@@ -7,6 +7,7 @@ const Button = ({children}) => {
 const StyledButton = styled.button`
   background: ${({theme}) => `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
   color: ${({theme}) => theme.colors.white};
+  cursor: pointer;
   border-radius: 50px;
   border: none;
   padding: 1.6rem 3.2rem;
