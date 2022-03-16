@@ -115,7 +115,7 @@ const ThursdayNewsletter = ({ info }) => {
   );
 };
 
-const apiRoot = process.env.ROOT_ENDPOINT;
+const apiRoot = process.env.NEXT_PUBLIC_ROOT_ENDPOINT;
 
 export async function getStaticPaths() {
   let resJSON;
