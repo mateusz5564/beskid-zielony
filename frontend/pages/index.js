@@ -1,4 +1,5 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import MainSwiper from "../components/MainSwiper";
 import Container from "../components/shared/Container";
@@ -8,6 +9,8 @@ import S from "../components/pages/index/Styled";
 import DekorLeft from "../public/img/decorations/dekor_left.png";
 import DekorRight from "../public/img/decorations/dekor_right.png";
 
+const DynamicMainSwiper = dynamic(() => import("../components/MainSwiper"), { ssr: false });
+
 export default function Home() {
   return (
     <>
@@ -16,7 +19,7 @@ export default function Home() {
       </Head>
       <S.Main>
         <Container>
-          <MainSwiper
+          <DynamicMainSwiper
             images={regionImages}
             breakpoints={{
               800: {

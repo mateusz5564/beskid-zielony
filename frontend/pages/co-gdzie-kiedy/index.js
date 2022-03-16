@@ -1,17 +1,19 @@
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import LinkIcon from "../../components/LinkIcon";
 import Container from "../../components/shared/Container";
 import NewsletterForm from "../../components/NewsletterForm";
 import BoldText from "../../components/shared/BoldText";
-import SimpleSlider from "../../components/SimpleSwiper";
 import S from "../../components/pages/co-gdzie-kiedy/Styled";
-import museumsImages from "../../utils/museumsImages";
-import agrotourismImages from "../../utils/agrotourismImages";
+import museums from "../../utils/museums";
+import agrotourism from "../../utils/agrotourism";
 import AddEventImg from "../../public/img/illustrations/add_events.png";
 import EventImg from "../../public/img/icons/event.png";
 import Newsletter2Img from "../../public/img/icons/newsletter2.png";
 import TouristImg from "../../public/img/icons/tourist.png";
+
+const DynamicSimpleSwiper = dynamic(() => import("../../components/SimpleSwiper"), { ssr: false });
 
 const CoGdzieKiedy = () => {
   return (
@@ -76,8 +78,8 @@ const CoGdzieKiedy = () => {
           <NewsletterForm />
         </S.Newsletter>
         <S.Ads>
-          <SimpleSlider
-            images={museumsImages}
+          <DynamicSimpleSwiper
+            items={museums}
             slidesPerView={1}
             breakpoints={{
               1200: {
@@ -85,8 +87,8 @@ const CoGdzieKiedy = () => {
               },
             }}
           />
-          <SimpleSlider
-            images={agrotourismImages}
+          <DynamicSimpleSwiper
+            items={agrotourism}
             slidesPerView={1}
             breakpoints={{
               1100: {
