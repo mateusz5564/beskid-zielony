@@ -9,6 +9,7 @@ const Nav = styled.nav`
   position: relative;
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
+  min-height: 6rem;
   z-index: 200;
 `;
 
@@ -105,6 +106,7 @@ const SideNavItem = styled.li`
     display: block;
     color: white;
     margin: 1rem 0;
+    text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 500;
@@ -128,14 +130,14 @@ const hamburgerOpenCss = css`
 `;
 
 const Hamburger = styled.button`
+position: absolute;
   display: none;
   border: none;
   background-color: transparent;
   min-height: 6rem;
   margin: 0;
   padding: 0;
-  margin-left: auto;
-  margin-right: 3.2rem;
+  right: 3.2rem;
   cursor: pointer;
   z-index: 200;
 

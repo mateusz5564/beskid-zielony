@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -8,12 +8,13 @@ import HeaderImg from "../../public/img/decorations/pasek.jpg";
 import HeaderMobImg from "../../public/img/decorations/pasek_mob.jpg";
 import Logo from "../../public/img/logo.png";
 import Backdrop from "../shared/Backdrop";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 const Header = () => {
   const router = useRouter();
   const pathname = router.pathname;
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  const [showDesktopHeaderImg, setShowDesktopHeaderImg] = useState(null);
+  const showDesktopHeaderImg = useMediaQuery('(min-width: 62.5rem)');
 
   const closeModal = () => {
     setIsSideNavOpen(false);
@@ -28,10 +29,6 @@ const Header = () => {
   const handleHamburger = () => {
     isSideNavOpen ? closeModal() : openModal();
   };
-
-  useEffect(() => {
-    setShowDesktopHeaderImg(window.matchMedia("(min-width: 62.5rem)").matches);
-  }, []);
 
   return (
     <S.Header>
