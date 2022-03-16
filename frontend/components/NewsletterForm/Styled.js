@@ -12,22 +12,33 @@ const Form = styled.form`
     margin-bottom: 2.4rem;
   }
 
-  input {
-    width: 100%;
-    margin-bottom: 1.6rem;
-    border-radius: 50px;
-    border: none;
-    padding: 1.6rem 2.4rem;
-    font-size: 2.5rem;
-    text-align: center;
+  button {
+    margin-top: 1.6rem;
+  }
 
-    &::placeholder {
-      font-weight: 300;
-      color: ${({ theme }) => theme.colors.darkGreen[500]};
-    }
+  .errorMsg {
+    font-size: 2rem;
+    margin: 0;
+    margin-top: 0.8rem;
+    color: red;
   }
 `;
 
-const Styled = { Form };
+const TextField = styled.input`
+  width: 100%;
+  border-radius: 50px;
+  border: none;
+  padding: 1.6rem 2.4rem;
+  font-size: 2.5rem;
+  text-align: center;
+  outline: ${({ isInvalid }) => (isInvalid ? "3px solid red" : "none")};
+
+  &::placeholder {
+    font-weight: 300;
+    color: ${({ theme }) => theme.colors.darkGreen[500]};
+  }
+`;
+
+const Styled = { Form, TextField };
 
 export default Styled;
