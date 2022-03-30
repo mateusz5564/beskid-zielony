@@ -33,6 +33,8 @@ const TextField = styled.input`
   text-align: center;
   outline: ${({ isInvalid }) => (isInvalid ? "3px solid red" : "none")};
 
+  ${({theme}) => theme.utils.keyboardFocusCss('&')}
+
   &::placeholder {
     font-weight: 300;
     color: ${({ theme }) => theme.colors.darkGreen[500]};
