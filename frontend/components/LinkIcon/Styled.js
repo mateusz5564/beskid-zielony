@@ -12,6 +12,9 @@ const Link = styled.a`
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
+
+  ${({theme}) => theme.utils.keyboardFocusCss('&', '-8px')}
 
   @media (max-width: 44rem) {
     text-align: center;
