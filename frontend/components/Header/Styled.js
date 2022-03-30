@@ -5,22 +5,29 @@ const Header = styled.header`
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
+const HeaderImg = styled.div`
+  height: 16rem;
+  position: relative;
+`;
+
+const Logo = styled.div`
+  background-color: ${({ theme }) => theme.colors.white};
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 3.2rem;
+  border-radius: 10px;
+  width: 9rem;
+`;
+
 const Nav = styled.nav`
   position: relative;
   background-color: ${({ theme }) => theme.colors.white};
   display: flex;
   min-height: 6rem;
   z-index: 200;
-`;
 
-const Banner = styled.div`
-  padding-top: 1.6rem;
-  text-align: bottom;
-  background-color: ${({ theme }) => theme.colors.white};
-
-  img {
-    width: 100%;
-  }
+  ${({ theme }) => theme.utils.keyboardFocusCss(".logo-link", "4px", "span")};
 `;
 
 const List = styled.ul`
@@ -46,6 +53,8 @@ const Link = styled.a`
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
+
+  ${({ theme }) => theme.utils.keyboardFocusCss("&", "-4px")};
 
   @media (max-width: 43rem) {
     display: none;
@@ -130,7 +139,7 @@ const hamburgerOpenCss = css`
 `;
 
 const Hamburger = styled.button`
-position: absolute;
+  position: absolute;
   display: none;
   border: none;
   background-color: transparent;
@@ -161,25 +170,9 @@ position: absolute;
   ${({ isSideNavOpen }) => (isSideNavOpen ? hamburgerOpenCss : null)}
 `;
 
-const HeaderImg = styled.div`
-  height: 16rem;
-  position: relative;
-`;
-
-const Logo = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
-  padding: 1rem;
-  position: absolute;
-  top: 0;
-  left: 3.2rem;
-  border-radius: 10px;
-  width: 9rem;
-`;
-
 const Styled = {
   Header,
   Nav,
-  Banner,
   HeaderImg,
   List,
   ListItem,

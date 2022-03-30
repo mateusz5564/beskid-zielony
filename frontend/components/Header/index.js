@@ -34,7 +34,7 @@ const Header = () => {
     <S.Header>
       <S.Nav>
         <NextLink href="/">
-          <a>
+          <a className="logo-link">
             <S.Logo>
               <Image src={Logo} priority alt="Home page" />
             </S.Logo>
