@@ -13,6 +13,8 @@ const StyledButton = styled.button`
   padding: 1.6rem 3.2rem;
   font-size: 2.5rem;
   font-weight: 500;
+
+  ${({theme}) => theme.utils.keyboardFocusCss('&')}
 `;
 
 export default Button;
