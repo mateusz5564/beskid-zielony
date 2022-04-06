@@ -107,14 +107,11 @@ const Wrapper = styled.article`
   }
 
   .description {
-    height: 100%;
+    display: ${({ descExpanded }) => (descExpanded ? "block" : "none")};
     background-color: ${({ theme, sponsored }) =>
       sponsored ? theme.colors.darkYellow[500] : theme.colors.lightGreen[50]};
-    height: ${({ descExpanded }) => (descExpanded ? "auto" : "0")};
     text-align: justify;
-    /* padding: 1.6rem; */
-    padding: ${({ descExpanded }) => (descExpanded ? "1.6rem" : "0")};
-    /* padding-bottom: 0; */
+    padding: 1.6rem;
     font-size: 2rem;
   }
 

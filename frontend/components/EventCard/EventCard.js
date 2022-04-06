@@ -44,10 +44,10 @@ const EventsCard = ({ event, sponsored }) => {
           <p className="ticket">wstęp: {event.wstep}</p>
         </div>
       </div>
-      <p className="description">{event.opis}</p>
-      <button className="expand-btn" onClick={handleExpanding}>
+      <button className="expand-btn" onClick={handleExpanding} aria-expanded={descExpanded ? 'true' : 'false'}>
         {descExpanded ? "zwiń opis..." : "rozwiń opis..."}
       </button>
+      <p className="description" aria-live="polite">{event.opis}</p>
     </S.Wrapper>
   );
 };
