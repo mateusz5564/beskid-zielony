@@ -5,6 +5,7 @@ import LinkIcon from "../../components/LinkIcon";
 import Container from "../../components/shared/Container";
 import NewsletterForm from "../../components/NewsletterForm";
 import BoldText from "../../components/shared/BoldText";
+import SkipToMain from "../../components/SkipToMain";
 import S from "../../components/pages/co-gdzie-kiedy/Styled";
 import museums from "../../utils/museums";
 import agrotourism from "../../utils/agrotourism";
@@ -12,17 +13,20 @@ import AddEventImg from "../../public/img/illustrations/add_events.png";
 import EventImg from "../../public/img/icons/event.png";
 import Newsletter2Img from "../../public/img/icons/newsletter2.png";
 import TouristImg from "../../public/img/icons/tourist.png";
+import { getFormattedDate } from "../../utils/formatDate";
 
 const DynamicSimpleSwiper = dynamic(() => import("../../components/SimpleSwiper"), { ssr: false });
 
-const CoGdzieKiedy = () => {
+const CoGdzieKiedy = ({ info }) => {
   return (
     <>
       <Head>
         <title>Beskid Zielony | Co? Gdzie? Kiedy?</title>
       </Head>
 
-      <main>
+      <SkipToMain />
+
+      <main id="main">
         <Container $maxWidth="100rem">
           <S.Features>
             <h1>Co? Gdzie? Kiedy?</h1>
@@ -53,7 +57,9 @@ const CoGdzieKiedy = () => {
           </S.Features>
         </Container>
 
-        <LinkIcon href="/">informacja czwartkowa nr 1/06.01.2022</LinkIcon>
+        <LinkIcon href={`/informacja-czwartkowa/${info.id}`}>
+          informacja czwartkowa nr {info.nr}/{getFormattedDate(info.data)}
+        </LinkIcon>
 
         <S.HelpUs>
           <Container $maxWidth="70rem">
@@ -86,6 +92,15 @@ const CoGdzieKiedy = () => {
                 slidesPerView: 2,
               },
             }}
+            a11yObj={{
+              containerMessage: "Muzea z okolicy",
+              firstSlideMessage: "To jest pierwsze muzeum",
+              lastSlideMessage: "To jest ostanie muzeum",
+              prevSlideMessage: "Poprzednie muzeum",
+              nextSlideMessage: "Nastepne muzeum",
+              paginationBulletMessage: "Przejdź do muzeum nr {{index}}",
+              slideRole: "img",
+            }}
           />
           <DynamicSimpleSwiper
             items={agrotourism}
@@ -98,11 +113,45 @@ const CoGdzieKiedy = () => {
                 slidesPerView: 3,
               },
             }}
+            a11yObj={{
+              containerMessage: "Agroturystyka z okolicy",
+              firstSlideMessage: "To jest pierwsza agroturystyka",
+              lastSlideMessage: "To jest ostania agroturystyka",
+              prevSlideMessage: "Poprzednia agroturystyka",
+              nextSlideMessage: "Nastepna agroturystyka",
+              paginationBulletMessage: "Przejdź do agroturystyki nr {{index}}",
+              slideRole: "img",
+            }}
           />
         </S.Ads>
       </main>
     </>
   );
 };
+
+export async function getStaticProps(context) {
+  const apiRoot = process.env.NEXT_PUBLIC_ROOT_ENDPOINT;
+  let resJSON;
+
+  try {
+    const res = await fetch(`${apiRoot}/informacje-czwartkowe/?sort[0]=data%3Adesc`);
+    resJSON = await res.json();
+  } catch (e) {
+    console.log(e);
+  }
+
+  const lastInfo = resJSON.data[0];
+  console.log(lastInfo);
+
+  return {
+    props: {
+      info: {
+        id: lastInfo.id,
+        nr: lastInfo.attributes.numer,
+        data: lastInfo.attributes.data,
+      },
+    },
+  };
+}
 
 export default CoGdzieKiedy;
