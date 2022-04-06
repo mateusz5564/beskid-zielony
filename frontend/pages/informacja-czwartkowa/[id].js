@@ -4,7 +4,9 @@ import Head from "next/head";
 import S from "../../components/pages/informacja-czwartkowa/Styled";
 import Container from "../../components/shared/Container";
 import EventCard from "../../components/EventCard/EventCard";
+import SkipToMain from "../../components/SkipToMain";
 import Masonry from "react-masonry-css";
+import { getFormattedDate } from "../../utils/formatDate";
 
 const ThursdayNewsletter = ({ info }) => {
   const router = useRouter();
@@ -66,11 +68,13 @@ const ThursdayNewsletter = ({ info }) => {
         <title>Beskid Zielony | Informacja Czwartkowa {info.attributes.data}</title>
       </Head>
 
-      <S.Main>
+      <SkipToMain />
+      <S.Main id="main">
         <Container $maxWidth="150rem">
           <h1>Informacja czwartkowa</h1>
           <h2>
-            Biuletyn - Newsletter nr {info.attributes.numer}/{info.attributes.data}
+            Biuletyn - Newsletter nr {info.attributes.numer}/
+            {getFormattedDate(info.attributes.data)}
           </h2>
 
           <S.EventsSection>
