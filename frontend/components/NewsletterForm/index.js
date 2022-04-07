@@ -54,7 +54,7 @@ const NewsletterForm = () => {
         kontaktowego:
       </p>
       <S.TextField type="text" placeholder="Wpisz swój email" value={email} isInvalid={!!errorMsg} onChange={onChange} />
-      <p className="errorMsg"> {errorMsg}</p>
+      <p className="errorMsg" aria-live="assertive">{errorMsg}</p>
       <Button>Zapisz się do newslettera</Button>
     </S.Form>
   );
