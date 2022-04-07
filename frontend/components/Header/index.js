@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import NextLink from "next/link";
@@ -9,12 +9,14 @@ import HeaderMobImg from "../../public/img/decorations/pasek_mob.jpg";
 import Logo from "../../public/img/logo.png";
 import Backdrop from "../shared/Backdrop";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import SrOnly from "../shared/SrOnly";
 
 const Header = () => {
   const router = useRouter();
   const pathname = router.pathname;
+  const [latestInfoId, setLatestInfoId] = useState();
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  const showDesktopHeaderImg = useMediaQuery('(min-width: 62.5rem)');
+  const showDesktopHeaderImg = useMediaQuery("(min-width: 62.5rem)");
 
   const closeModal = () => {
     setIsSideNavOpen(false);
@@ -30,13 +32,27 @@ const Header = () => {
     isSideNavOpen ? closeModal() : openModal();
   };
 
+  useEffect(async () => {
+    const apiRoot = process.env.NEXT_PUBLIC_ROOT_ENDPOINT;
+
+    //next doesn't support static props in components, so we have to get id of the latest newsletter on client-side
+    try {
+      const res = await fetch(`${apiRoot}/informacje-czwartkowe/?sort[0]=data%3Adesc`);
+      const json = await res.json();
+      setLatestInfoId(json.data[0].id);
+    } catch (e) {
+      console.log(e);
+    }
+  }, []);
+
   return (
     <S.Header>
-      <S.Nav>
+      <S.Nav aria-label="Menu główne">
         <NextLink href="/">
           <a className="logo-link">
+            <SrOnly>Przejdź na strone główną</SrOnly>
             <S.Logo>
-              <Image src={Logo} priority alt="Home page" />
+              <Image src={Logo} priority alt="" />
             </S.Logo>
           </a>
         </NextLink>
@@ -47,14 +63,16 @@ const Header = () => {
             </Link>
           </S.ListItem>
 
-          <S.ListItem>
-            <Link
-              href="/informacja-czwartkowa/1"
-              isActive={pathname.includes("informacja-czwartkowa")}
-            >
-              Informacja czwartkowa
-            </Link>
-          </S.ListItem>
+          {latestInfoId && (
+            <S.ListItem>
+              <Link
+                href={`/informacja-czwartkowa/${latestInfoId}`}
+                isActive={pathname.includes("informacja-czwartkowa")}
+              >
+                Informacja czwartkowa
+              </Link>
+            </S.ListItem>
+          )}
         </S.List>
 
         <S.SideNav isSideNavOpen={isSideNavOpen}>
@@ -79,10 +97,11 @@ const Header = () => {
           <span></span>
         </S.Hamburger>
       </S.Nav>
+
       <S.HeaderImg>
         {showDesktopHeaderImg === true && (
           <Image src={HeaderImg} alt="" priority layout="fill" objectFit="cover" />
-        )}
+          )}
         {showDesktopHeaderImg === false && (
           <Image src={HeaderMobImg} alt="" priority layout="fill" objectFit="cover" />
         )}
