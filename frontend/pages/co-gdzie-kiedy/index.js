@@ -92,15 +92,6 @@ const CoGdzieKiedy = ({ info }) => {
                 slidesPerView: 2,
               },
             }}
-            a11yObj={{
-              containerMessage: "Muzea z okolicy",
-              firstSlideMessage: "To jest pierwsze muzeum",
-              lastSlideMessage: "To jest ostanie muzeum",
-              prevSlideMessage: "Poprzednie muzeum",
-              nextSlideMessage: "Nastepne muzeum",
-              paginationBulletMessage: "Przejdź do muzeum nr {{index}}",
-              slideRole: "img",
-            }}
           />
           <DynamicSimpleSwiper
             items={agrotourism}
@@ -112,15 +103,6 @@ const CoGdzieKiedy = ({ info }) => {
               1600: {
                 slidesPerView: 3,
               },
-            }}
-            a11yObj={{
-              containerMessage: "Agroturystyka z okolicy",
-              firstSlideMessage: "To jest pierwsza agroturystyka",
-              lastSlideMessage: "To jest ostania agroturystyka",
-              prevSlideMessage: "Poprzednia agroturystyka",
-              nextSlideMessage: "Nastepna agroturystyka",
-              paginationBulletMessage: "Przejdź do agroturystyki nr {{index}}",
-              slideRole: "img",
             }}
           />
         </S.Ads>
