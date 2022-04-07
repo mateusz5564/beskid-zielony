@@ -14,7 +14,6 @@ function MyApp({ Component, pageProps }) {
       document.body.setAttribute("tabindex", "-1");
       document.body.focus();
       document.body.removeAttribute("tabindex");
-      console.log(document.activeElement)
     };
 
     router.events.on("routeChangeStart", handleRouteChange);
