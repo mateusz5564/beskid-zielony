@@ -43,6 +43,8 @@ const SideNavItem = styled.li`
     text-transform: uppercase;
     font-weight: 500;
     font-size: 2rem;
+
+    ${({ theme }) => theme.utils.keyboardFocusCss("&", undefined, undefined, "white")}
   }
 `;
 
@@ -66,6 +68,7 @@ const Hamburger = styled.button`
   display: none;
   border: none;
   background-color: transparent;
+  min-height: 2.6rem;
   margin: 0;
   padding: 0;
   top: 50%;
@@ -73,6 +76,11 @@ const Hamburger = styled.button`
   right: 3.2rem;
   cursor: pointer;
   z-index: 200;
+
+  ${({ theme, isSideNavOpen }) =>
+    isSideNavOpen
+      ? theme.utils.keyboardFocusCss("&", undefined, undefined, "white")
+      : theme.utils.keyboardFocusCss("&", undefined, undefined, "darkGreen")}
 
   @media (max-width: 43rem) {
     display: block;
