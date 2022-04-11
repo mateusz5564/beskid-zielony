@@ -1,9 +1,14 @@
 import theme from "../styles/theme";
 
-export const getFocusStyles = (focusableElSelector, offSet="4px", styledElSelector = "") => {
+export const getFocusStyles = (focusableElSelector, offSet="4px", styledElSelector = "", offSetColor="darkGreen") => {
+  const colors = {
+    'darkGreen': theme.colors.darkGreen[500],
+    'white': theme.colors.white,
+  }
+
   return `
     ${focusableElSelector}:focus ${styledElSelector} {
-      outline: 5px dotted ${theme.colors.darkGreen[500]};
+      outline: 5px dotted ${colors[offSetColor]};
       outline-offset: ${offSet};
     }
 
@@ -12,7 +17,7 @@ export const getFocusStyles = (focusableElSelector, offSet="4px", styledElSelect
     }
 
     ${focusableElSelector}:focus-visible ${styledElSelector} {
-      outline: 5px dotted ${theme.colors.darkGreen[500]};
+      outline: 5px dotted ${colors[offSetColor]};
       outline-offset: ${offSet};
     }
   `;
