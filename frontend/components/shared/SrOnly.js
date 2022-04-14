@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const SrOnly = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const SrOnly = ({ children, ariaLive }) => {
+  return <Wrapper aria-live={ariaLive}>{children}</Wrapper>;
 };
 
 const Wrapper = styled.div`
