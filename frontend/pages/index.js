@@ -19,7 +19,7 @@ export default function Home() {
       </Head>
 
       <SkipToMain />
-      <S.Main id="main">
+      <S.Main>
         <Container>
           <DynamicMainSwiper
             images={regionImages}
@@ -30,7 +30,7 @@ export default function Home() {
             }}
           />
         </Container>
-        <S.SectionText>
+        <S.SectionText id="main">
           <div className="dekor">
             <Image src={DekorLeft} layout="responsive" priority alt="" />
           </div>
