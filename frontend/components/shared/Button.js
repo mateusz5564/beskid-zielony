@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const Button = ({children}) => {
-  return <StyledButton>{children}</StyledButton>;
+const Button = ({children, disabled}) => {
+  return <StyledButton disabled={disabled}>{children}</StyledButton>;
 };
 
 const StyledButton = styled.button`
-  background: ${({theme}) => `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
+  background: ${({theme, disabled}) => disabled ? 'gray' : `linear-gradient(to right, ${theme.colors.lightGreen[500]}, ${theme.colors.darkGreen[500]})`};
   color: ${({theme}) => theme.colors.white};
   cursor: pointer;
   border-radius: 50px;
