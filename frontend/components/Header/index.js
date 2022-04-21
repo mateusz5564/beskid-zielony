@@ -60,7 +60,7 @@ const Header = () => {
           )}
         </S.List>
 
-        <HamburgerMenu />
+        <HamburgerMenu latestInfoId={latestInfoId} />
       </S.Nav>
 
       <S.HeaderImg>

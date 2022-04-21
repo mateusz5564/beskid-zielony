@@ -5,7 +5,7 @@ import Backdrop from "../shared/Backdrop";
 import S from "./Styled";
 import SrOnly from "../shared/SrOnly";
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ latestInfoId }) => {
   const router = useRouter();
   const pathname = router.pathname;
 
@@ -102,14 +102,16 @@ const HamburgerMenu = () => {
       </S.Hamburger>
       <S.SideNav id="hamburger-menu" ref={linksListRef} isSideNavOpen={isSideNavOpen}>
         {isSideNavOpen && <Backdrop onClick={closeModal} />}
-        <S.SideNavItem>
-          <NextLink
-            href="/informacja-czwartkowa/1"
-            isActive={pathname.includes("informacja-czwartkowa")}
-          >
-            <a onClick={closeModal}>Informacja czwartkowa</a>
-          </NextLink>
-        </S.SideNavItem>
+        {latestInfoId && (
+          <S.SideNavItem>
+            <NextLink
+              href={`/informacja-czwartkowa/${latestInfoId}`}
+              isActive={pathname.includes("informacja-czwartkowa")}
+            >
+              <a onClick={closeModal}>Informacja czwartkowa</a>
+            </NextLink>
+          </S.SideNavItem>
+        )}
         <S.SideNavItem>
           <NextLink href="/co-gdzie-kiedy" isActive={pathname === "/co-gdzie-kiedy"}>
             <a onClick={closeModal}>Co? Gdzie? Kiedy?</a>
